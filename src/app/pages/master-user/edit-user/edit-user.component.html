@@ -1,0 +1,34 @@
+<div class="container mt-4">
+    <h3 class="text-primary text-center">Edit User</h3>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmitEdit()">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" formControlName="title">
+      </div>
+  
+      <!-- 🔥 Dropdown Kategori (Dinamis dari Database) -->
+      <div class="mb-3">
+        <label for="category_id" class="form-label">Category</label>
+        <ng-select 
+          [items]="categoriesList" 
+          bindLabel="category" 
+          bindValue="id" 
+          formControlName="category_id"
+          placeholder="Select Category">
+        </ng-select>
+      </div>
+  
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" formControlName="description"></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="progress" class="form-label">Progress</label>
+        <input type="number" class="form-control" id="progress" formControlName="progress">
+      </div>
+  
+      <button type="submit" class="btn btn-success w-100">Update</button>
+    </form>
+  </div>
+  

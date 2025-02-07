@@ -1,0 +1,27 @@
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .table thead {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .table tbody tr {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .table tbody tr:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .table-row {
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  
+    &:hover {
+      background-color: #f8f9fa; /* Warna abu-abu terang saat hover */
+    }
+  }
+  

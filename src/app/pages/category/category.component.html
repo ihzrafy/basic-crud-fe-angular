@@ -1,0 +1,45 @@
+<p class="h3 fw-bold text-primary text-center mt-3">Category List</p>
+
+<div class="container">
+  <button class="btn btn-success mb-3" (click)="addCategory(modalCategory)">Add Data</button>
+
+  <div class="table-responsive">
+    <table class="table table-hover table-striped table-bordered shadow-lg rounded-3">
+      <thead class="table-primary">
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Category</th>
+        </tr>
+      </thead>
+      <tbody class="bg-white">
+        <tr *ngFor="let category of categoryData; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ category.category }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #modalCategory let-modal>
+  <div class="modal-header">
+    ADD CATEGORY
+  </div>
+
+  <div class="modal-body">
+    <form [formGroup]="categoryForm" (ngSubmit)="onSubmitCategory()" autocomplete="off">
+      <div class="mb-3">
+        <label class="form-label" for="category_name">Category Name</label>
+        <input type="text" class="form-control" id="category_name" placeholder="Category Name" required 
+               formControlName="category" [ngClass]="{ 'is-invalid': categoryForm.get('category')?.invalid && categoryForm.get('category')?.touched }">
+        <div *ngIf="categoryForm.get('category')?.invalid && categoryForm.get('category')?.touched" class="invalid-feedback">
+          <div *ngIf="categoryForm.get('category')?.errors?.['required']">Category name is required</div>
+        </div>
+      </div>
+
+      <div class="mb-2 mt-4">
+        <button class="btn btn-success w-100" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
