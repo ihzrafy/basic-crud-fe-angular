@@ -1,0 +1,10 @@
+<div class="container mt-4">
+    <h3 class="text-primary text-center">Edit Category</h3>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmitCategory()">
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <input type="text" class="form-control" id="category" formControlName="category">
+            <button type="submit" class="btn btn-success w-100">Update</button>
+        </div>
+    </form>
+</div>
