@@ -5,8 +5,21 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import {
+  ApexAxisChartSeries,
+  ApexChart,
+  ApexXAxis,
+  ApexDataLabels,
+  ApexYAxis
+} from 'ng-apexcharts';
 
-
+export interface ApexAxisChartInterface {
+  series: ApexAxisChartSeries;
+  chart: ApexChart;
+  xaxis: ApexXAxis;
+  dataLabels: ApexDataLabels;
+  yaxis: ApexYAxis;
+}
 export interface User {
   id: number;
   title: string;
@@ -28,7 +41,8 @@ export interface Category {
 })
 export class MasterUserComponent implements OnInit {
   userData: User[] = [];
-  categoriesList: Category[] = []; // 🔥 List kategori untuk dropdown
+  chartOptions: Partial<ApexAxisChartInterface> | any;
+  categoriesList: Category[] = []; 
   displayedColumns: string[] = ['id', 'title', 'description'];
   modalAdd: any;
   addForm!: UntypedFormGroup;
@@ -39,7 +53,7 @@ export class MasterUserComponent implements OnInit {
 
   constructor(
     private restApiService: ApiServiceService, 
-    private categoryService: CategoryServiceService, // 🔥 Inject CategoryService
+    private categoryService: CategoryServiceService, 
     private modalService: NgbModal, 
     private formBuilder: UntypedFormBuilder,
     private router: Router
@@ -55,6 +69,7 @@ export class MasterUserComponent implements OnInit {
       'description': ['', [Validators.required]],
       'progress': [null, [Validators.required]]
     });
+    this.showChart();
   }
 
   private getEmployees() {
@@ -154,6 +169,32 @@ export class MasterUserComponent implements OnInit {
         }
     });
 }
+
+showChart(){
+  this.chartOptions = {
+    series: [
+      {
+        name: "Sales",
+        data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+      }
+    ], 
+    chart: {
+      type: "line",
+      height: 350
+    },
+    xaxis: {
+      categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"]
+    },
+    dataLabels: {
+      enabled: false
+    },
+    yaxis: {
+      title: {
+        text: "Revenue ($)"
+      }
+    }
+  };
+}  
 
 
 }

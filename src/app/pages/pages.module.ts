@@ -8,6 +8,8 @@ import { CategoryComponent } from './category/category.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditUserComponent } from './master-user/edit-user/edit-user.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { EditCategoryComponent } from './category/edit-category/edit-category.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 
 
@@ -15,14 +17,16 @@ import { NgSelectModule } from '@ng-select/ng-select';
   declarations: [
     MasterUserComponent,
     CategoryComponent,
-    EditUserComponent
+    EditUserComponent,
+    EditCategoryComponent,
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
     MatTableModule,
     ReactiveFormsModule,
-    NgSelectModule
+    NgSelectModule,
+    NgApexchartsModule
   ]
 })
 export class PagesModule { }
