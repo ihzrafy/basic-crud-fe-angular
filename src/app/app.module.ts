@@ -11,6 +11,7 @@ import { MainLayoutComponent } from './template/main-layout/main-layout.componen
 import { MatTableModule } from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     HttpClientModule,
     MatTableModule,
     ReactiveFormsModule,
-    NgSelectModule
+    NgSelectModule,
+    NgApexchartsModule,
   ],
   providers: [
     provideClientHydration(withEventReplay()),

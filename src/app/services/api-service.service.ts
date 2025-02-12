@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczODgxMDYxOSwiZXhwIjoxNzM4ODk3MDE5fQ.1PBSax9ZqS7np2KhT2d7ISzxJig8z-AqVVpAlilSSyI'
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTczOTE1NDYyNywiZXhwIjoxNzM5MjQxMDI3fQ.RTEOVcS_L3ClPAxFjzO3Xw6G_-mwYq9xH9X5PNiV9KE'
   }),
 };
 

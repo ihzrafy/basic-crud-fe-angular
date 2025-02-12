@@ -1,0 +1,50 @@
+/* Tambahkan efek gradient pada header */
+.card-header {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 8px 8px 0 0;
+}
+
+/* Tambahkan shadow halus pada card */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek hover pada card */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling untuk chart agar terlihat clean */
+apx-chart {
+  max-width: 100%;
+  padding: 15px;
+}
+
+/* Animasi masuk saat halaman dimuat */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .card-header h3 {
+    font-size: 1.2rem;
+  }
+}
